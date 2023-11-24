@@ -1,0 +1,121 @@
+repo_name: nyteshade/cjs-mjs-combo-template
+report_id: fe407c1583f2c325f974e185d5bc9c39
+repo_type: Public
+timestamp: '2023-11-24T01:37:58+00:00'
+requested_by: nyteshade
+provider: github
+branch: main
+detected_tools_count: 9
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-16 23:44:26.000000000 Z
+- name: TypeScript
+  description: A superset of JavaScript that compiles to clean JavaScript output
+  website_url: http://www.typescriptlang.org
+  version: 5.2.2
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-16 23:44:26.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: Jest
+  description: Painless JavaScript Unit Testing
+  website_url: http://facebook.github.io/jest/
+  version: 29.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/830/jest.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-16 23:44:26.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-16 23:44:26.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source: Repo Metadata
+- name: jest-cli
+  description: Delightful JavaScript Testing
+  package_url: https://www.npmjs.com/jest-cli
+  version: 29.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16022/default_7a465bc85b23fd837cbc038fd1d504632c41a884.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-16 23:44:26.000000000 Z
+- name: jest-localstorage-mock
+  description: Auto mock all localstorage and sessionstorage APIs for your Jest tests
+  package_url: https://www.npmjs.com/jest-localstorage-mock
+  version: 2.4.26
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18662/default_348addf85c19938918faff5bcd79a5ee29764148.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-16 23:44:26.000000000 Z
+- name: prompts
+  description: Lightweight, beautiful and user-friendly prompts
+  package_url: https://www.npmjs.com/prompts
+  version: 2.4.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17250/default_8da30b412bf0dbb63f862bee0dfab0a32df2fb69.png
+  detection_source_url: package-lock.json
+  detection_source: package.json
+  last_updated_by: Brielle Harrison
+  last_updated_on: 2023-11-17 07:22:54.000000000 Z
