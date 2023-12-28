@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+
+const esbuild = await import('esbuild')
+const fs = await import('fs')
+
+const ext = fs.existsSync('src/index.ts') ? '.ts' : '.js'
+const packageJSON = (
+  JSON.parse(fs
+    .readFileSync('package.json')
+    .toString()
+  )
+)
+
+const { iifeGlobalName, version } = packageJSON
+const bundleName = `${packageJSON.name}.bundle.${version}.js`
+const outfile = `dist/${bundleName}`
+const iifeDefaultName = sanitizeForVariableName(packageJSON.name)
+
+esbuild
+  .build({
+    entryPoints: [`src/index${ext}`],
+    bundle: true,
+    mainFields: ["browser"],
+    sourcemap: true,
+    minify: true,
+    splitting: false,
+    globalName: iifeGlobalName && iifeGlobalName !== null
+      ? iifeGlobalName
+      : iifeDefaultName,
+    platform: "browser",
+    outfile,
+    target: ['esnext'],
+  })
+  .catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })
+
+try {
+  let packageJSONString
+
+  packageJSON.browser = outfile
+  packageJSONString = JSON.stringify(packageJSON, null, 2)
+
+  fs.writeFileSync('package.json', packageJSONString)
+}
+catch (error) {
+  console.error(error)
+
+  console.warn('Unable to update package.json, the browser property may be incorrect')
+  console.warn(`It should read ${outfile}`)
+}
+
+/**
+ * Sanitizes a string to make it safe to use as a JavaScript variable name.
+ * @param str The string to be sanitized.
+ * @returns A sanitized string safe to use as a variable name.
+ */
+function sanitizeForVariableName(str) {
+  // Regular expression to match valid JS variable name characters and word boundaries
+  const validChars = /[a-zA-Z0-9_$]/g;
+  const wordBoundary = /[^a-zA-Z0-9$]+(.)/g;
+
+  // Convert to camelCase
+  let sanitized = str.replace(wordBoundary, (match, char) => char.toUpperCase());
+
+  // Remove invalid characters
+  sanitized = sanitized.match(validChars)?.join('') || '_';
+
+  // Ensure the variable name does not start with a digit or uppercase letter
+  if (/^\d/.test(sanitized)) {
+    sanitized = '_' + sanitized;
+  } else if (/^[A-Z]/.test(sanitized)) {
+    sanitized = sanitized[0].toLowerCase() + sanitized.substring(1);
+  }
+
+  // Check against reserved keywords
+  const reservedKeywords = [
+    'break', 'case', 'catch', 'class', 'const', 'continue', 'debugger', 'default',
+    'delete', 'do', 'else', 'export', 'extends', 'finally', 'for', 'function',
+    'if', 'import', 'in', 'instanceof', 'new', 'return', 'super', 'switch',
+    'this', 'throw', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield',
+    // Add any other keywords you wish to check against
+  ];
+
+  if (reservedKeywords.includes(sanitized)) {
+    sanitized = '_' + sanitized;
+  }
+
+  return sanitized;
+}

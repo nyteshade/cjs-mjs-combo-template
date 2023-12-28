@@ -17,9 +17,6 @@ fi
 # Make dist if missing
 [[ ! -e dist ]] && mkdir dist
 
-# Clean the dist directory
-rm -fr dist/*
-
 # Build ecmascript modules build
 npx tsc -p tsconfig.esm.json
 

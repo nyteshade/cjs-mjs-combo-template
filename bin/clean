@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+const { rimraf } = await import('rimraf')
+
+await rimraf(
+  './dist/**/*',
+  { glob: true, preserveRoot: true }
+)
