@@ -1,7 +1,8 @@
 repo_name: nyteshade/cjs-mjs-combo-template
-report_id: b4b0d188e5d89625a085855ab0250a72
+report_id: fe407c1583f2c325f974e185d5bc9c39
+version: 0.1
 repo_type: Public
-timestamp: '2023-12-14T13:19:00+00:00'
+timestamp: '2024-01-05T08:34:45+00:00'
 requested_by: nyteshade
 provider: github
 branch: main
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/nyteshade/cjs-mjs-combo-template/blob/main/package.json
   detection_source: package.json
   last_updated_by: Brielle Harrison
   last_updated_on: 2023-11-16 23:44:26.000000000 Z
@@ -41,6 +43,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/nyteshade/cjs-mjs-combo-template
   detection_source: Repo Metadata
 - name: Jest
   description: Painless JavaScript Unit Testing
@@ -64,6 +67,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/nyteshade/cjs-mjs-combo-template/blob/main/package.json
   detection_source: package.json
   last_updated_by: Brielle Harrison
   last_updated_on: 2023-11-16 23:44:26.000000000 Z
@@ -76,6 +80,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/nyteshade/cjs-mjs-combo-template
   detection_source: Repo Metadata
 - name: jest-cli
   description: Delightful JavaScript Testing
