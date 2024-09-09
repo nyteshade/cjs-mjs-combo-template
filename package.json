@@ -1,8 +1,8 @@
 {
   "author": "Brielle Harrison <nyteshade at gmail.com>",
-  "browser": "dist/cjs-mjs-combo-template.bundle.0.0.1.js",
-  "description": "",
+  "browser": "dist/@nyteshade/ne-historical.bundle.0.0.1.js",
   "dependencies": {},
+  "description": "",
   "devDependencies": {
     "@jest/expect": "^29.7.0",
     "esbuild": "^0.19.10",
@@ -22,14 +22,15 @@
       "require": "./dist/cjs/index.js"
     }
   },
+  "iifeGlobalName": "",
   "jest": {
-    "verbose": true,
     "setupFiles": [
       "jest-localstorage-mock"
     ],
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    },
+    "verbose": true
   },
   "keywords": [
     "javascript",
@@ -37,18 +38,22 @@
     "localStorage"
   ],
   "license": "MIT",
-  "iifeGlobalName": "",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
-  "name": "cjs-mjs-combo-template",
+  "name": "@nyteshade/ne-historical",
+  "optionalDependencies": {
+    "@angular/core": "^14.3.0"
+  },
+  "peerDependencies": {
+    "rxjs": "^7.8.1"
+  },
   "scripts": {
-    "build": "bin/clean && bin/esbuild && bin/build",
     "browser": "bin/esbuild",
+    "build": "bin/clean && bin/esbuild && bin/build",
     "clean": "bin/clean",
     "module": "bin/build",
     "test": "jest"
   },
   "type": "module",
-  "types": "dist/index.d.ts",
   "version": "0.0.1"
 }
